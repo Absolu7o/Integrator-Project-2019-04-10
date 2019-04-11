@@ -1,14 +1,14 @@
 package controller;
 
 import dao.DaoGuestCheck;
-import model.ModelGuestCheck;
+import model.GuestCheck;
 
 public class ControllerRegisterGuestCheck {
 
-	ModelGuestCheck modelGuestCk = new ModelGuestCheck();
+	DaoGuestCheck daoGuestCk = new DaoGuestCheck();
 	
-	public DaoGuestCheck findGuestCheck(int code) {
-		return modelGuestCk.findGuestCheck(code);
+	public GuestCheck findGuestCheck(int code) {
+		return daoGuestCk.findGuestCheck(code);
 	}
 	
 }
