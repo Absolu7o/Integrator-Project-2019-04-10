@@ -1,6 +1,6 @@
-package model;
+package dao;
 
-public class RequestAdditionalItem {
+public class DaoRequestAdditionalIetm {
 
 	int code;
 	int code_requestitem;
