@@ -1,10 +1,12 @@
-package dao;
+package model;
 
-public class DaoTlabeList {
+public class Additional {
 
 	int code;
 	String description;
+	float price;
 	String active;
+	int code_category;
 
 	public int getCode() {
 		return code;
@@ -22,12 +24,28 @@ public class DaoTlabeList {
 		this.description = description;
 	}
 
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
 	public String getActive() {
 		return active;
 	}
 
 	public void setActive(String active) {
 		this.active = active;
+	}
+
+	public int getCode_category() {
+		return code_category;
+	}
+
+	public void setCode_category(int code_category) {
+		this.code_category = code_category;
 	}
 
 }

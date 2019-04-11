@@ -1,18 +1,13 @@
 package view;
 
-import java.awt.Container;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import controller.ControllerRegisterGuestCheck;
-import dao.DaoGuestCheck;
+import model.GuestCheck;
 
 public class ViewRegisterGuestCheck extends ViewMaster implements ActionListener {
 
@@ -130,7 +125,7 @@ public class ViewRegisterGuestCheck extends ViewMaster implements ActionListener
 			System.out.println("Atualizar");
 		} else if (e.getSource() == buttonSearch) {
 			System.out.println("Pesquisar");
-			DaoGuestCheck guestCheck = controllerGuestCk.findGuestCheck(Integer.parseInt(fieldCode.getText()));
+			GuestCheck guestCheck = controllerGuestCk.findGuestCheck(Integer.parseInt(fieldCode.getText()));
 			fieldCode.setText(String.valueOf(guestCheck.getCode()));
 			fieldBarcode.setText(guestCheck.getBarcode());
 			comboboxActive.setSelectedItem(guestCheck.getActive());
