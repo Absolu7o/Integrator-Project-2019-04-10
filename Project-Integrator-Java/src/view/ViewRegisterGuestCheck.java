@@ -125,10 +125,6 @@ public class ViewRegisterGuestCheck extends ViewMaster implements ActionListener
 			System.out.println("Atualizar");
 		} else if (e.getSource() == buttonSearch) {
 			System.out.println("Pesquisar");
-			GuestCheck guestCheck = controllerGuestCk.findGuestCheck(Integer.parseInt(fieldCode.getText()));
-			fieldCode.setText(String.valueOf(guestCheck.getCode()));
-			fieldBarcode.setText(guestCheck.getBarcode());
-			comboboxActive.setSelectedItem(guestCheck.getActive());
 		}
 	}
 
