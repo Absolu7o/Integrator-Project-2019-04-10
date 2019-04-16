@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class ViewRegisterTlabeList extends ViewMaster implements ActionListener {
+public class ViewRegisterTableList extends ViewMaster implements ActionListener {
 
 	JLabel labelTitle = new JLabel("Cadastro de Mesas");
 	JLabel labelCode = new JLabel("Código");
@@ -37,7 +37,7 @@ public class ViewRegisterTlabeList extends ViewMaster implements ActionListener 
 	String[] item = { "SIM", "NÃO" };
 	JComboBox comboboxActive = new JComboBox(item);
 
-	public ViewRegisterTlabeList() {
+	public ViewRegisterTableList() {
 		createAndShowView();		
 	}
 

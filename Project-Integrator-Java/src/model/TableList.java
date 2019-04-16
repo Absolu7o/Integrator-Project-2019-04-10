@@ -1,6 +1,6 @@
 package model;
 
-public class TlabeList {
+public class TableList {
 
 	int code;
 	String description;
