@@ -9,7 +9,6 @@ create table if not exists userlogin(
 	
 create table if not exists userpermission(
 	code integer,
-	manager char(1),
 	cashier char(1),
 	attendant char(1),
 	constraint userpermission_pk1 primary key (code),
