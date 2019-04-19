@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/04/2019 20:08:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Userlog" table="userlog" schema="sis_comanda" optimistic-lock="version">
+        <id name="code" type="int">
+            <column name="code" />
+            <generator class="foreign">
+                <param name="property">userlogin</param>
+            </generator>
+        </id>
+        <one-to-one name="userlogin" class="model.Userlogin" constrained="true"></one-to-one>
+        <property name="datetimeins" type="timestamp">
+            <column name="datetimeins" length="29" />
+        </property>
+        <property name="logtype" type="string">
+            <column name="logtype" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
