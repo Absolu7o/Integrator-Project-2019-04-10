@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/04/2019 22:28:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Filterhistory" table="filterhistory" schema="sis_comanda" optimistic-lock="version">
+        <id name="code" type="int">
+            <column name="code" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="category" class="model.Category" fetch="select">
+            <column name="code_category" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/04/2019 22:28:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Item" table="item" schema="sis_comanda" optimistic-lock="version">
+        <id name="code" type="int">
+            <column name="code" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="category" class="model.Category" fetch="select">
+            <column name="code_category" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="description" length="40" />
+        </property>
+        <property name="price" type="big_decimal">
+            <column name="price" precision="6" />
+        </property>
+        <property name="preparation" type="string">
+            <column name="preparation" length="10" />
+        </property>
+        <property name="additional" type="string">
+            <column name="additional" length="3" />
+        </property>
+        <property name="active" type="string">
+            <column name="active" length="3" />
+        </property>
+        <set name="additionalitems" table="additionalitem" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="code_item" />
+            </key>
+            <one-to-many class="model.Additionalitem" />
+        </set>
+        <set name="requestitems" table="requestitem" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="code_item" />
+            </key>
+            <one-to-many class="model.Requestitem" />
+        </set>
+        <set name="comboitemsForCodeItem" table="comboitem" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="code_item" />
+            </key>
+            <one-to-many class="model.Comboitem" />
+        </set>
+        <set name="comboitemsForCodeComboitem" table="comboitem" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="code_comboitem" />
+            </key>
+            <one-to-many class="model.Comboitem" />
+        </set>
+    </class>
+</hibernate-mapping>

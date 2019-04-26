@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/04/2019 22:28:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Tablelist" table="tablelist" schema="sis_comanda" optimistic-lock="version">
+        <id name="code" type="int">
+            <column name="code" />
+            <generator class="assigned" />
+        </id>
+        <property name="description" type="string">
+            <column name="description" length="10" unique="true" />
+        </property>
+        <property name="active" type="string">
+            <column name="active" length="3" />
+        </property>
+        <set name="requests" table="request" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="code_tablelist" />
+            </key>
+            <one-to-many class="model.Request" />
+        </set>
+    </class>
+</hibernate-mapping>
